@@ -192,7 +192,7 @@ public class BusController
     public String PrintInfo()
     {
         String rv = "";
-        rv += "Parsed Bus Data:\n");
+        rv += "Parsed Bus Data:\n";
         for(int i = 0; i < m_routes.size(); i++)
         {
             rv += "Route #" + i + "\n";
@@ -206,6 +206,7 @@ public class BusController
             }
         }
         System.out.println(rv);
+        return rv;
     }
     
 }
