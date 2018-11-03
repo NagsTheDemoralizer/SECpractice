@@ -178,7 +178,7 @@ public class BusController
     {
         ArrayList<Location> locations = DrivingInstructionsList(index);
         if(locations.size() == 0) return "This route has no stops!\n";
-        String rv = "Route #" + (index+1) + " driving instructions:";
+        String rv = "Route #" + (index+1) + " driving instructions:\n";
         rv += "Begin at row: " + locations.get(0).getRow() + " and column: " + locations.get(0).getCol() + "\n";
 
         for(int i = 0; i < locations.size(); i++)
@@ -230,7 +230,7 @@ public class BusController
                 System.out.println("after get stop\n");
                 rv += "\tPeople: " + s.getPeople() + "\n";
                 rv += "\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")\n";
-                rv += "\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")";
+                rv += "\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")\n";
             }
         }
         System.out.println(rv);
