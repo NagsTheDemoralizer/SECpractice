@@ -160,5 +160,9 @@ public class BusController
             }
         }
     }
+
+    public void drivingInstruct(){
+        
+    }
 }
 
