@@ -12,7 +12,14 @@
       <tabs>
         <Tab text="Driving Instructions">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" text="Route 1" />
+                <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" text="Route 2" />
+                <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" text="Route 3" />
+                <TextArea layoutX="88.0" layoutY="19.0" prefHeight="308.0" prefWidth="470.0" text="Buttons will control text area here" wrapText="true" />
+              </children>
+            </AnchorPane>
           </content>
         </Tab>
         <Tab text="Bus Routes">
