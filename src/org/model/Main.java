@@ -20,13 +20,16 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-
-
-
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        primaryStage.setTitle("Hello World");
+        System.out.println("aaa");
+        Parent root = FXMLLoader.load(getClass().getResource("../viewer/GUI.fxml"));
+        System.out.println("bbb");
+        primaryStage.setTitle("Bus Route Application");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+//        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+//        primaryStage.setTitle("Hello World");
+//        primaryStage.setScene(new Scene(root, 300, 275));
+//        primaryStage.show();
 //        //creating a Group object
 //        Group group = new Group();
 //
@@ -62,10 +65,10 @@ public class Main extends Application
         String inputFile = "test1.txt";
         if(args.length > 0)
             inputFile = args[0];
-        m_mainController = new MainController();
-        m_mainController.start(inputFile);
+        //m_mainController = new MainController();
+        //m_mainController.start(inputFile);
 
-        //launch(args);
+        launch(args);
     }
 
     public void buttonPressed(ActionEvent e)
