@@ -1,5 +1,5 @@
 package org.model;
-import java.util.ArrayList<E>;
+import java.util.ArrayList;
 
 public class Bus {
 
