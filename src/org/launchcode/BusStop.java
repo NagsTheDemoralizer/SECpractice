@@ -35,5 +35,5 @@ public class BusStop
         m_startLoc = start;
         m_endLoc = end;
     }
->>>>>>> 3fe91b38c5e0ead7c8483e1df94451f42310d431
+
 }
