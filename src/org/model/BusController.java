@@ -121,7 +121,7 @@ public class BusController
      * @param index: The index of the route to get directions for.
      * @return an ArrayList of Locations to visit in order.
      */
-    public ArrayList<Location> DrivingInstructions(int index)
+    public ArrayList<Location> DrivingInstructionsList(int index)
     {
         ArrayList<Location> rv = new ArrayList<Location>();
         if(m_routes.size() <= index)
@@ -145,6 +145,20 @@ public class BusController
         for(int i = 0; i < route.size(); i++)
         {
             rv.add(route.get(i).getEndLoc());
+        }
+        return rv;
+    }
+
+    public String DrivingInstructions(int index)
+    {
+        ArrayList<Location> locations = DrivingInstructionsList(index);
+        if(locations.size() == 0) return "This route has no stops!\n";
+        String rv = "";
+        rv += "Begin at row: " + locations.get(0).getRow() + " and column: " + locations.get(0).getCol() + "\n";
+
+        for(int i = 0; i < locations.size(); i++)
+        {
+            rv += "Continue to row: " + locations.get(i).getRow() + " and column: " + locations.get(i).getCol() + "\n";
         }
         return rv;
     }
