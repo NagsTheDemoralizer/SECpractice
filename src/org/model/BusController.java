@@ -32,8 +32,6 @@ public class BusController
     /**
      * Takes an input of BusStops and calculates a set of routes which attempts to optimize
      * the stops based on the total distance travelled. (?)
-     *
-     * @param busStops: A list of Bus Stops.
      */
     public void CalculateRoutes()
     {
@@ -155,8 +153,8 @@ public class BusController
                 System.out.println("\tStop #:" + (j+1));
                 BusStop s = m_routes.get(i).get(j);
                 System.out.println("\tPeople: " + s.getPeople());
-                System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol());
-                System.out.println("\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol());
+                System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")");
+                System.out.println("\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")");
             }
         }
     }
