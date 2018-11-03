@@ -1,4 +1,5 @@
 package org.launchcode;
+import java.Arraylist;
 
 public class Bus {
 
@@ -8,5 +9,9 @@ public class Bus {
     public Bus(){
         this.cost = 4;
         this. capacity = 20;
+    }
+
+    public Bus(ArrayList<BusStop>){
+
     }
 }
