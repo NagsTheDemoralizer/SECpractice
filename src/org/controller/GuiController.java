@@ -49,7 +49,7 @@ public class GuiController
     @FXML
     public void changeValuesPressed(ActionEvent e)
     {
-        
+
 
         System.out.println("Route 1 pressed");
         routeText.setText(s);
