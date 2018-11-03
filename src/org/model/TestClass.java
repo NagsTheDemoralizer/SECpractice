@@ -33,7 +33,6 @@ public class TestClass {
         while (inputStream.hasNextLine())
         {
             String line = inputStream.nextLine();
-            System.out.println(line);
         }
         inputStream.close();
     }
