@@ -59,4 +59,5 @@ public class BusStop
 
     public Location getStartLoc() { return m_startLoc; }
     public Location getEndLoc() { return m_endLoc; }
+    public int getPeople() { return m_people; }
 }

@@ -139,5 +139,24 @@ public class BusController
             m_stops.add(new BusStop(numPeople, new Location(startRow, startCol), new Location(destRow, destCol)));
         }
     }
+
+    /**
+     * Just a test function to print the info after parsing.
+     */
+    public void PrintInfo()
+    {
+        System.out.println("Parsed Bus Data:");
+        for(int i = 0; i < m_routes.size(); i++)
+        {
+            System.out.println("Route #1");
+            for(int j = 0; j < m_routes.get(i).size(); j++)
+            {
+                BusStop s = m_routes.get(i).get(j);
+                System.out.println("\tPeople: " + s.getPeople());
+                System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol());
+                System.out.println("\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol());
+            }
+        }
+    }
 }
 

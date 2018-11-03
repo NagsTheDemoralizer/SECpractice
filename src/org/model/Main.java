@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Main extends Application
 {
-    private BusController m_busController;
+    private static org.controller.MainController m_mainController;
     // others.
 
     @Override
@@ -53,45 +53,14 @@ public class Main extends Application
         //     - Create routes (see BusController).
         //     - Other stuff?
         // 3. Launch GUI.
-
+        System.out.println("numArgs: " + args.length);
+        for(int i = 0; i < args.length; i++)
+        {
+            System.out.println("arg: " + args[i]);
+        }
+        m_mainController.start();
 
         launch(args);
-    }
-
-    private ArrayList<Long> inputParser(String file){
-
-
-        String fileName = "C:\\Users\\anagr\\OneDrive\\Documents\\Github\\SECpractice\\src\\org\\model\\" + file;
-        Scanner inputStream = null;
-        System.out.println("The file " + fileName +
-                "\ncontains the following lines:\n");
-
-        try
-        {
-            inputStream = new Scanner(new File(fileName));
-        }
-        catch(FileNotFoundException e)
-        {
-            System.out.println("Error opening the file " +
-                    fileName);
-            System.exit(0);
-        }
-
-        //ArrayList<String> alist = new ArrayList<>();
-        ArrayList<Long> intlist = new ArrayList<Long>();
-
-        for (int x = 0; inputStream.hasNextLine(); x++) {
-            intlist.add(inputStream.nextLong());
-        }
-        inputStream.close();
-
-        /*
-        for (int x = 0; x < intlist.size(); x++){
-            System.out.println(intlist.get(x));
-        }*/
-
-        return intlist;
-
     }
 
     public void buttonPressed(ActionEvent e)
