@@ -6,6 +6,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main extends Application
 {
     private BusController m_busController;
@@ -51,6 +56,42 @@ public class Main extends Application
 
 
         launch(args);
+    }
+
+    private ArrayList<Integer> inputParser(String file){
+
+
+        String fileName = "C:\\Users\\anagr\\OneDrive\\Documents\\Github\\SECpractice\\src\\org\\model\\test.txt";
+        Scanner inputStream = null;
+        System.out.println("The file " + fileName +
+                "\ncontains the following lines:\n");
+
+        try
+        {
+            inputStream = new Scanner(new File(fileName));
+        }
+        catch(FileNotFoundException e)
+        {
+            System.out.println("Error opening the file " +
+                    fileName);
+            System.exit(0);
+        }
+
+        //ArrayList<String> alist = new ArrayList<>();
+        ArrayList<Integer> intlist = new ArrayList<Integer>();
+
+        for (int x = 0; inputStream.hasNextLine(); x++) {
+            intlist.add(inputStream.nextInt());
+        }
+        inputStream.close();
+
+        /*
+        for (int x = 0; x < intlist.size(); x++){
+            System.out.println(intlist.get(x));
+        }*/
+
+        return intlist;
+
     }
 
     public void buttonPressed(ActionEvent e)
