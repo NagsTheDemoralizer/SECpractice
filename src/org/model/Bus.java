@@ -20,4 +20,12 @@ public class Bus {
     public Bus(ArrayList<BusStop> busStops){
         // change route
     }
+
+    public int getCurrentCap(){
+        return this.currentCap;
+    }
+
+    public static void setCurrentCap(int curCap){
+        currentCap += curCap;
+    }
 }
