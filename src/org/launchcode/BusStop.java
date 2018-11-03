@@ -1,8 +1,5 @@
 package org.launchcode;
 
-<<<<<<< HEAD
-public class BusStop {
-=======
 /**
  * A class containing information about a bus stop. This includes the # of people waiting at the bus stop,
  * along with the start and end location.
