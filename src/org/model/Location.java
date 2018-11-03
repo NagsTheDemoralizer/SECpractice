@@ -1,4 +1,4 @@
-package org.launchcode;
+package org.model;
 
 /**
  * A helper class containing information about a bus stop location.
