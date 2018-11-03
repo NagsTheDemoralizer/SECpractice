@@ -8,12 +8,17 @@ public class BusController
      */
     private ArrayList<ArrayList<BusStop> > m_routes;
     /**
+     * A list of bus stops.
+     */
+    private ArrayList<BusStop> m_stops;
+    /**
      * A number in [1,3] which specifies the number of routes to create.
      */
     private int m_numRoutes;
 
     public BusController(int numRoutes)
     {
+        m_stops = new ArrayList<BusStop>();
         if(numRoutes > 3 || numRoutes < 1)
         {
             // error
@@ -111,4 +116,28 @@ public class BusController
         }
         return totalDist;
     }
+
+    /**
+     * Does shit.
+     * @param rawData
+     */
+    public void ParseDataIntoBusStops(ArrayList<Long> rawData)
+    {
+        for(int i = 0; i < rawData.size(); i++)
+        {
+            long data = rawData.get(i);
+            int numPeople = (int)data % 100;
+            data /= 100;
+            int destCol = (int)data % 100;
+            data /= 100;
+            int destRow = (int)data % 100;
+            data /= 100;
+            int startCol = (int)data % 100;
+            data /= 100;
+            int startRow = (int)data % 100;
+
+            m_stops.add(new BusStop(numPeople, new Location(startRow, startCol), new Location(destRow, destCol)));
+        }
+    }
 }
+
