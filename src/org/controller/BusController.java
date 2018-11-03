@@ -10,6 +10,7 @@ public class BusController
     private ArrayList<Integer> m_numBusses = new ArrayList<>();
     private ArrayList<Integer> m_numPeopleOnRoute = new ArrayList<Integer>();
     private int m_busCap = 20;
+    private int m_busCost = 4;
 
     // static method to create instance of Singleton class
     public static BusController getInstance()
@@ -242,6 +243,8 @@ public class BusController
         {
             rv += "\nRoute #" + (i+1) + "\n";
             rv += "\tNumber of Busses: " + m_numBusses.get(i) + "\n";
+            rv += "\tCommute Time: " + CalculateShortestDistance(m_routes.get(i)) + "\n";
+            rv += "\tTotal Cost: " + (m_numBusses.get(i)*m_busCost) + "\n";
             for(int j = 0; j < m_routes.get(i).size(); j++)
             {
                 rv += "\tStop #:" + (j+1) + "\n";
@@ -262,6 +265,11 @@ public class BusController
         m_numBusses.add(0, m_numPeopleOnRoute.get(0)/m_busCap + 1);
         m_numBusses.add(1, m_numPeopleOnRoute.get(1)/m_busCap + 1);
         m_numBusses.add(2, m_numPeopleOnRoute.get(2)/m_busCap + 1);
+    }
+
+    public void ChangeBusCost(int newCost)
+    {
+        m_busCost = newCost;
     }
 
 }

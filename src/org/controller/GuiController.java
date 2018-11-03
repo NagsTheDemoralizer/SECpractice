@@ -14,6 +14,8 @@ public class GuiController
     private TextArea routeInformation;
     @FXML
     private TextField busCap;
+    @FXML
+    private TextField busCost;
 
     @FXML
     public void route1Pressed(ActionEvent e)
@@ -65,7 +67,17 @@ public class GuiController
         } catch(Exception ex) { return; }
         if(val <= 0)
             return;
-        BusController.getInstance().ChangeBusCap(Integer.parseInt(busCap.getText()));
+        BusController.getInstance().ChangeBusCap(val);
+
+        int val2 = 0;
+        try
+        {
+            val2 = Integer.parseInt(busCost.getText());
+        } catch(Exception ex) { return; }
+        if(val2 <= 0)
+            return;
+        BusController.getInstance().ChangeBusCost(val2);
     }
+
 
 }

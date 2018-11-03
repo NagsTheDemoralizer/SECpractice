@@ -36,7 +36,7 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TextField layoutX="264.0" layoutY="32.0" prefWidth="54.0" />
+                <TextField id="busCost" fx:id="busCost" layoutX="264.0" layoutY="32.0" prefWidth="54.0" />
                 <TextField editable="false" layoutX="14.0" layoutY="68.0" prefWidth="238.0" text="Enter unit bus capacity (# of people / bus)" />
                 <TextField editable="false" layoutX="14.0" layoutY="32.0" prefWidth="200.0" text="Enter unit bus cost ($$ / road)" />
                 <TextField editable="false" layoutX="225.0" layoutY="32.0" prefWidth="27.0" text="\$" />
