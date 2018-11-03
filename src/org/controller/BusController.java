@@ -38,9 +38,9 @@ public class BusController
             // error
             return;
         }
-        m_numRoutes = numRoutes;
-        for(int i = 0; i < m_numRoutes; i++)
-            m_routes.add(new ArrayList<BusStop>());
+        m_numRoutes = 3;//numRoutes;
+//        for(int i = 0; i < m_numRoutes; i++)
+//            m_routes.add(new ArrayList<BusStop>());
     }
 
     /**
@@ -58,8 +58,10 @@ public class BusController
         ArrayList<BusStop> route1 = new ArrayList<BusStop>();
         ArrayList<BusStop> route2 = new ArrayList<BusStop>();
         ArrayList<BusStop> route3 = new ArrayList<BusStop>();
+
         for(int i = 0; i < busStops.size(); i++)
         {
+            System.out.println("adding stops...\n");
             if(i % m_numRoutes == 0)
             {
                 route1.add(busStops.get(i));
@@ -74,9 +76,15 @@ public class BusController
             }
 
         }
-        m_routes.add(route1);
-        if(m_numRoutes > 1) m_routes.add(route2);
-        if(m_numRoutes > 2) m_routes.add(route3);
+
+        System.out.println("route 1 size: " + route1.size());
+        System.out.println("route 2 size: " + route2.size());
+        System.out.println("route 3 size: " + route3.size());
+        m_routes.add(0, route1);
+        if(m_numRoutes > 1) m_routes.add(1, route2);
+        if(m_numRoutes > 2) m_routes.add(2, route3);
+        System.out.println("Number of routes: " + m_routes.size());
+        System.out.println("route 1 size in routes: " + m_routes.get(0).size());
     }
 
     /**
@@ -137,13 +145,16 @@ public class BusController
      */
     public ArrayList<Location> DrivingInstructionsList(int index)
     {
+        System.out.println("getting instructions...\n");
         ArrayList<Location> rv = new ArrayList<Location>();
         if(m_routes.size() <= index)
         {
             // exception
+            System.out.println("index is too large\n");
             return rv;
         }
         ArrayList<BusStop> route = m_routes.get(index);
+        System.out.println("route size: " + route.size());
         if(route.size() == 0) return rv;
         if(route.size() == 1)
         {
@@ -167,7 +178,7 @@ public class BusController
     {
         ArrayList<Location> locations = DrivingInstructionsList(index);
         if(locations.size() == 0) return "This route has no stops!\n";
-        String rv = "";
+        String rv = "Route #" + (index+1) + " driving instructions:";
         rv += "Begin at row: " + locations.get(0).getRow() + " and column: " + locations.get(0).getCol() + "\n";
 
         for(int i = 0; i < locations.size(); i++)
@@ -205,15 +216,18 @@ public class BusController
      */
     public String PrintInfo()
     {
+        System.out.println("number of routes: " + m_routes.size());
         String rv = "";
-        rv += "Parsed Bus Data:\n";
+        //rv += "Parsed Bus Data:\n";
         for(int i = 0; i < m_routes.size(); i++)
         {
-            rv += "Route #" + i + "\n";
+            rv += "\nRoute #" + (i+1) + "\n";
             for(int j = 0; j < m_routes.get(i).size(); j++)
             {
                 rv += "\tStop #:" + (j+1) + "\n";
+                System.out.println("before get stop\n");
                 BusStop s = m_routes.get(i).get(j);
+                System.out.println("after get stop\n");
                 rv += "\tPeople: " + s.getPeople() + "\n";
                 rv += "\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")\n";
                 rv += "\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")";

@@ -9,6 +9,8 @@ public class GuiController
 {
     @FXML
     private TextArea routeText;
+    @FXML
+    private TextArea routeInformation;
 
     @FXML
     public void route1Pressed(ActionEvent e)
@@ -51,9 +53,15 @@ public class GuiController
     {
 
 
-        System.out.println("Route 1 pressed");
-        String s = "what is this";
-        routeText.setText(s);
+//        System.out.println("Route 1 pressed");
+//        String s = "what is this";
+//        routeText.setText(s);
+    }
+
+    @FXML
+    public void showRouteInfo(ActionEvent e)
+    {
+        routeInformation.setText(BusController.getInstance().PrintInfo());
     }
 
 }

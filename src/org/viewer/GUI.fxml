@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.controller.GuiController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.GuiController">
   <children>
     <TabPane layoutX="0.0" layoutY="0.0" prefHeight="400.9999000000025" prefWidth="599.9999000000025" tabClosingPolicy="UNAVAILABLE">
       <tabs>
@@ -17,7 +17,7 @@
                 <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#route1Pressed" text="Route 1" />
                 <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" text="Route 2" />
                 <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" text="Route 3" />
-                <TextArea fx:id="routeText" layoutX="97.0" layoutY="14.0" onInputMethodTextChanged="#route1Pressed" prefHeight="308.0" prefWidth="470.0" text="Buttons will control text area here" wrapText="true" />
+                <TextArea fx:id="routeText" layoutX="97.0" layoutY="14.0" onInputMethodTextChanged="#route1Pressed" prefHeight="308.0" prefWidth="470.0" text="Click a route on the side to view driving instructions." wrapText="true" />
               </children>
             </AnchorPane>
           </content>
@@ -26,8 +26,8 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TextArea layoutX="0.0" layoutY="41.0" prefHeight="329.0" prefWidth="600.0" text="Enter Bus Information Here" wrapText="true" />
-                <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" text="Display Route Information" />
+                <TextArea fx:id="routeInformation" layoutX="0.0" layoutY="41.0" prefHeight="329.0" prefWidth="600.0" text="Click above button to view route information." wrapText="true" />
+                <Button layoutY="14.0" mnemonicParsing="false" onAction="#showRouteInfo" text="Display Route Information" />
               </children>
             </AnchorPane>
           </content>

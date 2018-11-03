@@ -24,7 +24,7 @@ public class Main extends Application
         Parent root = FXMLLoader.load(getClass().getResource("../viewer/GUI.fxml"));
         System.out.println("bbb");
         primaryStage.setTitle("Bus Route Application");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root));//, 300, 275));
         primaryStage.show();
 //        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 //        primaryStage.setTitle("Hello World");
@@ -65,8 +65,8 @@ public class Main extends Application
         String inputFile = "test1.txt";
         if(args.length > 0)
             inputFile = args[0];
-        //m_mainController = new MainController();
-        //m_mainController.start(inputFile);
+        m_mainController = new MainController();
+        m_mainController.start(inputFile);
 
         launch(args);
     }
