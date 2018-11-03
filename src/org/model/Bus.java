@@ -1,4 +1,4 @@
-package org.launchcode;
+package org.model;
 import java.util.ArrayList<E>;
 
 public class Bus {
