@@ -116,6 +116,34 @@ public class BusController
         return totalDist;
     }
 
+    public ArrayList<Location> GetDirectionsOfRoute(int index)
+    {
+        ArrayList<Location> rv = new ArrayList<Location>();
+        if(m_routes.size() <= index)
+        {
+            // exception
+            return rv;
+        }
+        ArrayList<BusStop> route = m_routes.get(index);
+        if(route.size() == 0) return rv;
+        if(route.size() == 1)
+        {
+            rv.add(route.get(0).getStartLoc());
+            rv.add(route.get(0).getEndLoc());
+            return rv;
+        }
+
+        for(int i = 0; i < route.size(); i++)
+        {
+            rv.add(route.get(i).getStartLoc());
+        }
+        for(int i = 0; i < route.size(); i++)
+        {
+            rv.add(route.get(i).getEndLoc());
+        }
+        return rv;
+    }
+
     /**
      * Does shit.
      * @param rawData
