@@ -189,21 +189,23 @@ public class BusController
     /**
      * Just a test function to print the info after parsing.
      */
-    public void PrintInfo()
+    public String PrintInfo()
     {
-        System.out.println("Parsed Bus Data:");
+        String rv = "";
+        rv += "Parsed Bus Data:\n");
         for(int i = 0; i < m_routes.size(); i++)
         {
-            System.out.println("Route #1");
+            rv += "Route #" + i + "\n";
             for(int j = 0; j < m_routes.get(i).size(); j++)
             {
-                System.out.println("\tStop #:" + (j+1));
+                rv += "\tStop #:" + (j+1) + "\n";
                 BusStop s = m_routes.get(i).get(j);
-                System.out.println("\tPeople: " + s.getPeople());
-                System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")");
-                System.out.println("\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")");
+                rv += "\tPeople: " + s.getPeople() + "\n";
+                rv += "\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")\n";
+                rv += "\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")";
             }
         }
+        System.out.println(rv);
     }
     
 }
