@@ -58,10 +58,10 @@ public class Main extends Application
         launch(args);
     }
 
-    private ArrayList<Integer> inputParser(String file){
+    private ArrayList<Long> inputParser(String file){
 
 
-        String fileName = "C:\\Users\\anagr\\OneDrive\\Documents\\Github\\SECpractice\\src\\org\\model\\test.txt";
+        String fileName = "C:\\Users\\anagr\\OneDrive\\Documents\\Github\\SECpractice\\src\\org\\model\\" + file;
         Scanner inputStream = null;
         System.out.println("The file " + fileName +
                 "\ncontains the following lines:\n");
@@ -78,10 +78,10 @@ public class Main extends Application
         }
 
         //ArrayList<String> alist = new ArrayList<>();
-        ArrayList<Integer> intlist = new ArrayList<Integer>();
+        ArrayList<Long> intlist = new ArrayList<Long>();
 
         for (int x = 0; inputStream.hasNextLine(); x++) {
-            intlist.add(inputStream.nextInt());
+            intlist.add(inputStream.nextLong());
         }
         inputStream.close();
 
