@@ -10,11 +10,11 @@ public class MainController
         m_busController = new org.model.BusController(3);
     }
 
-    public void start()
+    public void start(String inputFile)
     {
         ArrayList<Long> rawData = new ArrayList<Long>();
         org.model.Parser p = org.model.Parser.getInstance();
-        rawData = p.inputParser("file1.txt");
+        rawData = p.inputParser(inputFile);
         m_busController.ParseDataIntoBusStops(rawData);
 
         m_busController.PrintInfo();

@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import org.controller.MainController;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -58,7 +59,11 @@ public class Main extends Application
         {
             System.out.println("arg: " + args[i]);
         }
-        m_mainController.start();
+        String inputFile = "test1.txt";
+        if(args.length > 0)
+            inputFile = args[0];
+        m_mainController = new MainController();
+        m_mainController.start(inputFile);
 
         launch(args);
     }
