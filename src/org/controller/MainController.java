@@ -16,6 +16,7 @@ public class MainController
         org.model.Parser p = org.model.Parser.getInstance();
         rawData = p.inputParser(inputFile);
         m_busController.ParseDataIntoBusStops(rawData);
+        m_busController.CalculateRoutes();
 
         m_busController.PrintInfo();
     }

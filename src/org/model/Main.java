@@ -65,7 +65,7 @@ public class Main extends Application
         m_mainController = new MainController();
         m_mainController.start(inputFile);
 
-        launch(args);
+        //launch(args);
     }
 
     public void buttonPressed(ActionEvent e)

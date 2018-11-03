@@ -148,14 +148,14 @@ public class BusController
         System.out.println("Parsed Bus Data:");
         for(int i = 0; i < m_routes.size(); i++)
         {
-            System.out.println("Route #" + (i+1));
+            System.out.println("Route #1");
             for(int j = 0; j < m_routes.get(i).size(); j++)
             {
-                System.out.println("\tStop #" + (j+1));
+                System.out.println("\tStop #:" + (j+1));
                 BusStop s = m_routes.get(i).get(j);
-                System.out.println("\t\tPeople: " + s.getPeople());
-                System.out.println("\t\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol());
-                System.out.println("\t\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol());
+                System.out.println("\tPeople: " + s.getPeople());
+                System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol());
+                System.out.println("\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol());
             }
         }
     }
