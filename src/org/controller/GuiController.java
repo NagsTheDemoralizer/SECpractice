@@ -39,23 +39,11 @@ public class GuiController
         routeText.setText(s);
     }
 
-    @FXML
-    public void routeInfoPressed(ActionEvent e)
-    {
-        String s = BusController.getInstance().DrivingInstructions(1);
-
-        System.out.println("Route 1 pressed");
-        routeText.setText(s);
-    }
 
     @FXML
     public void changeValuesPressed(ActionEvent e)
     {
-
-
-//        System.out.println("Route 1 pressed");
-//        String s = "what is this";
-//        routeText.setText(s);
+        //setCost(costText);
     }
 
     @FXML

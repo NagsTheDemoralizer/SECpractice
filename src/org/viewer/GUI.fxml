@@ -8,15 +8,15 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.GuiController">
   <children>
-    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="400.9999000000025" prefWidth="599.9999000000025" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutY="7.0" prefHeight="400.9999000000025" prefWidth="599.9999000000025" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab text="Driving Instructions">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
                 <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#route1Pressed" text="Route 1" />
-                <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" text="Route 2" />
-                <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" text="Route 3" />
+                <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#route2Pressed" text="Route 2" />
+                <Button layoutX="14.0" layoutY="83.0" mnemonicParsing="false" onAction="#route3Pressed" text="Route 3" />
                 <TextArea fx:id="routeText" layoutX="97.0" layoutY="14.0" onInputMethodTextChanged="#route1Pressed" prefHeight="308.0" prefWidth="470.0" text="Click a route on the side to view driving instructions." wrapText="true" />
               </children>
             </AnchorPane>
@@ -36,12 +36,12 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TextField layoutX="264.0" layoutY="32.0" prefWidth="54.0" text="\$$" />
+                <TextField layoutX="264.0" layoutY="32.0" prefWidth="54.0" />
                 <TextField layoutX="14.0" layoutY="68.0" prefWidth="238.0" text="Enter unit bus capacity (# of people / bus)" />
                 <TextField editable="false" layoutX="14.0" layoutY="32.0" prefWidth="200.0" text="Enter unit bus cost ($$ / road)" />
                 <TextField editable="false" layoutX="327.0" layoutY="32.0" prefWidth="27.0" text="\$" />
-                <TextField layoutX="264.0" layoutY="68.0" prefWidth="54.0" text="people" />
-                <Button layoutX="14.0" layoutY="109.0" mnemonicParsing="false" text="Change Values" />
+                <TextField layoutX="264.0" layoutY="68.0" prefWidth="54.0" />
+                <Button layoutX="14.0" layoutY="109.0" mnemonicParsing="false" onAction="#changeValuesPressed" text="Change Values" />
               </children>
             </AnchorPane>
           </content>

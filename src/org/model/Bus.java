@@ -33,7 +33,11 @@ public class Bus {
         return this.capacity;
     }
 
-    public void setCapacity(int cap){
+    public void setCap(int cap){
         capacity = cap;
+    }
+
+    public void setCost(int n){
+        this.cost = n;
     }
 }
