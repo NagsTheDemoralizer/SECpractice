@@ -35,8 +35,9 @@ public class BusController
      *
      * @param busStops: A list of Bus Stops.
      */
-    public void CalculateRoutes(ArrayList<BusStop> busStops)
+    public void CalculateRoutes()
     {
+        ArrayList<BusStop> busStops = m_stops;
         // Do fancy shit to figure out Routes.
 
         // Naive approach, just create arbitrary routes.
