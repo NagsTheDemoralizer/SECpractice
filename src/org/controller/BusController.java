@@ -1,4 +1,7 @@
-package org.model;
+package org.controller;
+import org.model.BusStop;
+import org.model.Location;
+
 import java.util.ArrayList;
 
 public class BusController
@@ -28,6 +31,7 @@ public class BusController
 
     private BusController(int numRoutes)
     {
+        m_routes = new ArrayList<ArrayList<BusStop> >();
         m_stops = new ArrayList<BusStop>();
         if(numRoutes > 3 || numRoutes < 1)
         {

@@ -13,7 +13,7 @@ public class GuiController
     @FXML
     public void route1Pressed(ActionEvent e)
     {
-        String s = DrivingInstructions(0);
+        String s = BusController.getInstance().DrivingInstructions(0);
 
         System.out.println("Route 1 pressed");
         routeText.setText(s);
@@ -22,7 +22,7 @@ public class GuiController
     @FXML
     public void route2Pressed(ActionEvent e)
     {
-        String s = DrivingInstructions(1);
+        String s = BusController.getInstance().DrivingInstructions(1);
 
         System.out.println("Route 2 pressed");
         routeText.setText(s);
@@ -31,7 +31,7 @@ public class GuiController
     @FXML
     public void route3Pressed(ActionEvent e)
     {
-        String s = DrivingInstructions(2);
+        String s = BusController.getInstance().DrivingInstructions(2);
 
         System.out.println("Route 1 pressed");
         routeText.setText(s);
@@ -40,7 +40,7 @@ public class GuiController
     @FXML
     public void routeInfoPressed(ActionEvent e)
     {
-        String s = DrivingInstructions(1);
+        String s = BusController.getInstance().DrivingInstructions(1);
 
         System.out.println("Route 1 pressed");
         routeText.setText(s);
@@ -52,6 +52,7 @@ public class GuiController
 
 
         System.out.println("Route 1 pressed");
+        String s = "what is this";
         routeText.setText(s);
     }
 
