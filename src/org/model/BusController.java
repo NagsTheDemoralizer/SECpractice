@@ -159,8 +159,15 @@ public class BusController
         }
     }
 
-    public void drivingInstruct(){
-        
+    public void drivingInstruct(int routeNum){
+        System.out.println("Printing driving instructions for Route #" +routeNum);
+        for(int j = 0; j < m_routes.get(routeNum).size(); j++)
+        {
+            System.out.println("\tStop #:" + (j+1));
+            BusStop s = m_routes.get(routeNum).get(j);
+            System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")");
+            System.out.println("\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")");
+        }
     }
 }
 
