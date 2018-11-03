@@ -7,6 +7,9 @@ import java.util.ArrayList;
 public class BusController
 {
     private static BusController instance = null;
+    private ArrayList<Integer> m_numBusses = new ArrayList<>();
+    private ArrayList<Integer> m_numPeopleOnRoute = new ArrayList<Integer>();
+    private int m_busCap = 20;
 
     // static method to create instance of Singleton class
     public static BusController getInstance()
@@ -59,32 +62,51 @@ public class BusController
         ArrayList<BusStop> route2 = new ArrayList<BusStop>();
         ArrayList<BusStop> route3 = new ArrayList<BusStop>();
 
+//        ArrayList<Location> starts = new ArrayList<Location>();
+//        ArrayList<Location> ends = new ArrayList<Location>();
+//        boolean[] visitedStart = new boolean[busStops.size()];
+//        boolean[] visitedEnd = new boolean[busStops.size()];
+//        for(int i = 0; i < busStops.size(); i++)
+//        {
+//            starts.add(busStops.get(i).getStartLoc());
+//            ends.add(busStops.get(i).getStartLoc());
+//            visitedStart[i] = false;
+//            visitedEnd[i] = false;
+//        }
+//        while(!busStops.isEmpty())
+//        {
+//            for()
+//        }
+
         for(int i = 0; i < busStops.size(); i++)
         {
-            System.out.println("adding stops...\n");
+            m_numPeopleOnRoute.add( 0);
+            m_numPeopleOnRoute.add( 0);
+            m_numPeopleOnRoute.add( 0);
             if(i % m_numRoutes == 0)
             {
                 route1.add(busStops.get(i));
+                m_numPeopleOnRoute.add(0, m_numPeopleOnRoute.get(0) + busStops.get(i).getPeople());
             }
             else if(i % m_numRoutes == 1)
             {
                 route2.add(busStops.get(i));
+                m_numPeopleOnRoute.add(1, m_numPeopleOnRoute.get(1) + busStops.get(i).getPeople());
             }
             else
             {
                 route3.add(busStops.get(i));
+                m_numPeopleOnRoute.add(2, m_numPeopleOnRoute.get(2) + busStops.get(i).getPeople());
             }
 
         }
 
-        System.out.println("route 1 size: " + route1.size());
-        System.out.println("route 2 size: " + route2.size());
-        System.out.println("route 3 size: " + route3.size());
+        m_numBusses.add(0, m_numPeopleOnRoute.get(0)/m_busCap + 1);
+        m_numBusses.add(1, m_numPeopleOnRoute.get(1)/m_busCap + 1);
+        m_numBusses.add(2, m_numPeopleOnRoute.get(2)/m_busCap + 1);
         m_routes.add(0, route1);
         if(m_numRoutes > 1) m_routes.add(1, route2);
         if(m_numRoutes > 2) m_routes.add(2, route3);
-        System.out.println("Number of routes: " + m_routes.size());
-        System.out.println("route 1 size in routes: " + m_routes.get(0).size());
     }
 
     /**
@@ -145,12 +167,10 @@ public class BusController
      */
     public ArrayList<Location> DrivingInstructionsList(int index)
     {
-        System.out.println("getting instructions...\n");
         ArrayList<Location> rv = new ArrayList<Location>();
         if(m_routes.size() <= index)
         {
             // exception
-            System.out.println("index is too large\n");
             return rv;
         }
         ArrayList<BusStop> route = m_routes.get(index);
@@ -216,25 +236,32 @@ public class BusController
      */
     public String PrintInfo()
     {
-        System.out.println("number of routes: " + m_routes.size());
         String rv = "";
         //rv += "Parsed Bus Data:\n";
         for(int i = 0; i < m_routes.size(); i++)
         {
             rv += "\nRoute #" + (i+1) + "\n";
+            rv += "\tNumber of Busses: " + m_numBusses.get(i) + "\n";
             for(int j = 0; j < m_routes.get(i).size(); j++)
             {
                 rv += "\tStop #:" + (j+1) + "\n";
-                System.out.println("before get stop\n");
                 BusStop s = m_routes.get(i).get(j);
-                System.out.println("after get stop\n");
                 rv += "\tPeople: " + s.getPeople() + "\n";
-                rv += "\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")\n";
-                rv += "\tEndLoc  : (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")\n";
+                rv += "\tStart Location (row,col): (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol() + ")\n";
+                rv += "\tEnd Location   (row,col): (" + s.getEndLoc().getRow() + ", " + s.getEndLoc().getCol() + ")\n";
             }
         }
         System.out.println(rv);
         return rv;
+    }
+
+    public void ChangeBusCap(int newCap)
+    {
+        m_busCap = newCap;
+        System.out.println("new cap: " + m_busCap);
+        m_numBusses.add(0, m_numPeopleOnRoute.get(0)/m_busCap + 1);
+        m_numBusses.add(1, m_numPeopleOnRoute.get(1)/m_busCap + 1);
+        m_numBusses.add(2, m_numPeopleOnRoute.get(2)/m_busCap + 1);
     }
 
 }
