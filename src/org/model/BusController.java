@@ -116,7 +116,12 @@ public class BusController
         return totalDist;
     }
 
-    public ArrayList<Location> GetDirectionsOfRoute(int index)
+    /**
+     * Gets the instructions of route #index. This is a terribly inefficient route for the poor bus driver.
+     * @param index: The index of the route to get directions for.
+     * @return an ArrayList of Locations to visit in order.
+     */
+    public ArrayList<Location> DrivingInstructions(int index)
     {
         ArrayList<Location> rv = new ArrayList<Location>();
         if(m_routes.size() <= index)
