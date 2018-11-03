@@ -15,7 +15,7 @@ public class TestClass {
         //	Scanner keyBoard = new Scanner(System.in);
         //	String fileName = keyBoard.next();
 
-        String fileName = "test.txt";
+        String fileName = "C:\\Users\\anagr\\OneDrive\\Documents\\Github\\SECpractice\\src\\org\\model\\test.txt";
         Scanner inputStream = null;
         System.out.println("The file " + fileName +
                 "\ncontains the following lines:\n");
@@ -32,25 +32,19 @@ public class TestClass {
         }
 
         //ArrayList<String> alist = new ArrayList<>();
-        ArrayList<Double> doublist = new ArrayList<Double>();
+        ArrayList<Integer> intlist = new ArrayList<Integer>();
 
         for (int x = 0; inputStream.hasNextLine(); x++)
         {
             //alist.add(inputStream.nextLine());
-            doublist.add(inputStream.nextDouble());
+
+        intlist.add(inputStream.nextInt());
 
         }
         inputStream.close();
 
-        ArrayList<Integer> busStops = new ArrayList<Integer>();
-        double num = doublist.get(0);
-        while(num > 0){
-            busStops.add((int)(num % 1000000));
-            num = num / 1000000;
-        }
-
-        for (int x = 0; x < busStops.size(); x++){
-            System.out.println(busStops.get(x));
+        for (int x = 0; x < intlist.size(); x++){
+            System.out.println(intlist.get(x));
         }
 
     }
