@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22452d27-b944-4424-a3f5-276246fdc534" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/org/launchcode/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/launchcode/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="22452d27-b944-4424-a3f5-276246fdc534" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +76,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541209536620" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541211145157" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
