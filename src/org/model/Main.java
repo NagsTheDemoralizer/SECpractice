@@ -6,10 +6,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
-public class Main extends Application {
+public class Main extends Application
+{
+    private BusController m_busController;
+    // others.
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {
+
+
+
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
@@ -32,7 +39,17 @@ public class Main extends Application {
 //        //Displaying the contents of the stage
 //        primaryStage.show();
     }
-    public static void main(String args[]){
+    public static void main(String args[])
+    {
+        // Aight, this is gonna be how this works.
+        // 1. Set stuff up that doesn't change (idk what would fit here).
+        // 2. Read input from text file.
+        //     - Initalize Busses, BusStops, etc.
+        //     - Create routes (see BusController).
+        //     - Other stuff?
+        // 3. Launch GUI.
+
+
         launch(args);
     }
 
