@@ -18,6 +18,7 @@ public class BusController
 
     public BusController(int numRoutes)
     {
+        m_routes = new ArrayList<ArrayList<BusStop> >();
         m_stops = new ArrayList<BusStop>();
         if(numRoutes > 3 || numRoutes < 1)
         {
@@ -25,8 +26,9 @@ public class BusController
             return;
         }
         m_numRoutes = numRoutes;
-        for(int i = 0; i < m_numRoutes; i++)
+        for(int i = 0; i < m_numRoutes; i++) {
             m_routes.add(new ArrayList<BusStop>());
+        }
     }
 
     /**
@@ -35,8 +37,9 @@ public class BusController
      *
      * @param busStops: A list of Bus Stops.
      */
-    public void CalculateRoutes(ArrayList<BusStop> busStops)
+    public void CalculateRoutes()
     {
+        ArrayList<BusStop> busStops = m_stops;
         // Do fancy shit to figure out Routes.
 
         // Naive approach, just create arbitrary routes.
@@ -151,6 +154,7 @@ public class BusController
             System.out.println("Route #1");
             for(int j = 0; j < m_routes.get(i).size(); j++)
             {
+                System.out.println("\tInfo");
                 BusStop s = m_routes.get(i).get(j);
                 System.out.println("\tPeople: " + s.getPeople());
                 System.out.println("\tStartLoc: (" + s.getStartLoc().getRow() + ", " + s.getStartLoc().getCol());
