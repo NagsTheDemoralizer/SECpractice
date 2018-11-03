@@ -7,7 +7,7 @@ public class MainController
 
     public MainController()
     {
-        m_busController = new org.model.BusController(3);
+        m_busController = org.model.BusController.getInstance();
     }
 
     public void start(String inputFile)
