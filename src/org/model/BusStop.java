@@ -56,4 +56,7 @@ public class BusStop
         m_people += (b.getCapacity() - b.getCurrentCap());
         b.setCurrentCap(0);
     }
+
+    public Location getStartLoc() { return m_startLoc; }
+    public Location getEndLoc() { return m_endLoc; }
 }
