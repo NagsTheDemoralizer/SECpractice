@@ -34,27 +34,26 @@ public class BusStop
     }
 
     /**
-     * Attempt to pick up all people from the Bus Stop. This should happen when a Bus arrives at the stop.
-     * The calling Bus should probably add the return value to their recorded capacity.
+     * Attempt to pick up all people from the Bus Stop onto Bus b. This should happen when a Bus arrives at the stop.
+     * This checks the available capacity of the Bus and picks up as many people as possible.
      *
-     * @param capacity: The available capacity of the Bus.
-     * @return The number of people picked up from the stop.
+     * @param b: The Bus picking up people.
      */
-    public int pickup(int capacity)
+    public void pickup(Bus b)
     {
-        int pickup = (capacity >= m_people)? m_people : capacity;
-        m_people -= pickup;
-        return pickup;
+        m_people -= (b.getCurrentCap() >= m_people)? m_people : b.getCurrentCap();
+        b.setCurrentCap(b.getCurrentCap() - m_people);
     }
 
     /**
      * Drop off @capacity people at the Bus Stop. A Bus Stop does not have a maximum capacity so
      * it should be this straightforward.
-     * @param capacity: The number of people being dropped off.
+     *
+     * @param b: The Bus dropping off people.
      */
-    public void dropoff(int capacity)
+    public void dropoff(Bus b)
     {
-        m_people += capacity;
+        m_people += (b.getCapacity() - b.getCurrentCap());
+        b.setCurrentCap(0);
     }
-
 }
