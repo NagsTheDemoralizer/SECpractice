@@ -25,7 +25,15 @@ public class Bus {
         return this.currentCap;
     }
 
-    public static void setCurrentCap(int curCap){
+    public void setCurrentCap(int curCap){
         currentCap += curCap;
+    }
+
+    public int getCapacity(){
+        return this.capacity;
+    }
+
+    public static void setCapacity(){
+
     }
 }
