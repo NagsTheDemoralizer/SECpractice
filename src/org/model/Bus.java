@@ -3,10 +3,10 @@ import java.util.ArrayList<E>;
 
 public class Bus {
 
-    private int cost;
-    private int capacity;
-    private ArrayList<BusStop> route = new ArrayList<BusStop>();
-    private int currentCap = 0;
+    private static int cost;
+    private static int capacity;
+    private static ArrayList<BusStop> route = new ArrayList<BusStop>();
+    private static int currentCap = 0;
 
     /*
     default constructor for Bus class
@@ -21,19 +21,19 @@ public class Bus {
         // change route
     }
 
-    public int getCurrentCap(){
+    public static int getCurrentCap(){
         return this.currentCap;
     }
 
-    public void setCurrentCap(int curCap){
+    public static void setCurrentCap(int curCap){
         currentCap += curCap;
     }
 
-    public int getCapacity(){
+    public static int getCapacity(){
         return this.capacity;
     }
 
-    public static void setCapacity(){
-
+    public static void setCapacity(int cap){
+        capacity = cap;
     }
 }
