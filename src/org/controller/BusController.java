@@ -1,8 +1,21 @@
-package org.model;
+package org.controller;
+import org.model.BusStop;
+import org.model.Location;
+
 import java.util.ArrayList;
 
 public class BusController
 {
+    private static BusController instance = null;
+
+    // static method to create instance of Singleton class
+    public static BusController getInstance()
+    {
+        if (instance == null)
+            instance = new BusController(3);
+
+        return instance;
+    }
     /**
      * A list of routes, where a route is a list of BusStops.
      */
@@ -16,8 +29,9 @@ public class BusController
      */
     private int m_numRoutes;
 
-    public BusController(int numRoutes)
+    private BusController(int numRoutes)
     {
+        m_routes = new ArrayList<ArrayList<BusStop> >();
         m_stops = new ArrayList<BusStop>();
         if(numRoutes > 3 || numRoutes < 1)
         {

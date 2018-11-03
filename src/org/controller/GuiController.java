@@ -13,9 +13,50 @@ public class GuiController
     @FXML
     public void route1Pressed(ActionEvent e)
     {
+<<<<<<< HEAD
+=======
+        String s = BusController.getInstance().DrivingInstructions(0);
+
+        System.out.println("Route 1 pressed");
+        routeText.setText(s);
+    }
+
+    @FXML
+    public void route2Pressed(ActionEvent e)
+    {
+        String s = BusController.getInstance().DrivingInstructions(1);
+
+        System.out.println("Route 2 pressed");
+        routeText.setText(s);
+    }
+
+    @FXML
+    public void route3Pressed(ActionEvent e)
+    {
+        String s = BusController.getInstance().DrivingInstructions(2);
+
+        System.out.println("Route 1 pressed");
+        routeText.setText(s);
+    }
+
+    @FXML
+    public void routeInfoPressed(ActionEvent e)
+    {
+        String s = BusController.getInstance().DrivingInstructions(1);
+
+        System.out.println("Route 1 pressed");
+        routeText.setText(s);
+    }
+
+    @FXML
+    public void changeValuesPressed(ActionEvent e)
+    {
+
+>>>>>>> 51ca5517abe0665511bd937046e2a92fd5a6205d
 
         String s = DrivingInstructions(0);
         System.out.println("Route 1 pressed");
+        String s = "what is this";
         routeText.setText(s);
     }
 }
