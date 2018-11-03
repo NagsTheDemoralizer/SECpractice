@@ -81,3 +81,4 @@ local.properties
 
 .DS_Store
 out/
+.idea/
