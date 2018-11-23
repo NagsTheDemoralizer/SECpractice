@@ -17,7 +17,7 @@ public class Parser
     public static ArrayList<Long> inputParser(String file)
     {
         String fileName = "C:\\Users\\anagr\\OneDrive\\Documents\\Github\\SECpractice\\src\\org\\model\\" + file;
-        fileName = "/Users/dainemcniven/Documents/University/SEC/" + file;
+       // fileName = "/Users/dainemcniven/Documents/University/SEC/" + file;
         System.out.println("filename: " + fileName);
         Scanner inputStream = null;
         System.out.println("The file " + fileName +
